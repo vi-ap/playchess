@@ -1,13 +1,22 @@
-var express = require('express');
-var app = express();
+var http = require('http');
 
-app.get('/', function (request, response) {
-    response.send('Hello from server!');
-});
+http.createServer(function (req, res) {
 
-var server = app.listen(3000, function () {
-    console.log('Server listening');
-});
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end('Hello, world!');
+
+}).listen(process.env.PORT || 8080);
+
+//var express = require('express');
+//var app = express();
+
+//app.get('/', function (request, response) {
+//    response.send('Hello from server!');
+//});
+
+//var server = app.listen(3000, function () {
+//    console.log('Server listening');
+//});
 
 //#!/usr/bin/env node
 
