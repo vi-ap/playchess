@@ -1,11 +1,13 @@
 var http = require('http');
 
 http.createServer(function (req, res) {
-
+    console.log("Request received");
     res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end('Hello, world!');
+    res.end('Hello from node server!');
 
 }).listen(process.env.PORT || 8080);
+
+console.log("Server running");
 
 //var express = require('express');
 //var app = express();
