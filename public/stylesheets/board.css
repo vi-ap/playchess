@@ -1,0 +1,19 @@
+﻿.board {
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+}
+
+.board .square {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+.board .square.black {
+    background-color: black;
+}
+
+.board .square.white {
+    background-color: white;
+}
