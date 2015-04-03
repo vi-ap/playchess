@@ -1,19 +1,25 @@
+// Require dependecies
 var express = require('express');
+
 var app = express();
+
+// Set parameters
+app.set('port', process.env.port || 3000);
+app.set('view engine', 'jade');
 
 // Routing
 app.get('/', function(request, response) {
-    response.send("Hello from Express");
+    response.render('index', { title: 'Chess' });
 });
 
 app.get('/test-route', function (request, response) {
-    response.send("Test route");
+    response.send('Test route');
 });
 
 // Static files
 app.use(express.static('public'));
 
-var server = app.listen(3000, function() {
+var server = app.listen(app.get('port'), function() {
     console.log("Server Listening");
 });
 
