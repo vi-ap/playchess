@@ -1,16 +1,19 @@
-var http = require('http');
+var express = require('express');
+var app = express();
 
-http.createServer(function (req, res) {
-    console.log(req);
-    console.log("Request received");
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end('<img src="http://minionslovebananas.com/images/gallery/preview/Chiquita-DM2-minion-dave-bananas.jpg?w=420&h=356"/>');
+// Routing
+app.get('/', function(request, response) {
+    response.send("Hello from Express");
+});
 
-}).listen(process.env.PORT || 8080);
+// Static files
+app.use(express.static('public'));
 
-console.log("Server running");
+var server = app.listen(3000, function() {
+    console.log("Server Listening");
+});
 
-//var express = require('express');
+
 //var path = require('path');
 //var favicon = require('serve-favicon');
 //var logger = require('morgan');
