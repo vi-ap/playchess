@@ -6,6 +6,10 @@ app.get('/', function(request, response) {
     response.send("Hello from Express");
 });
 
+app.get('/test-route', function (request, response) {
+    response.send("Test route");
+});
+
 // Static files
 app.use(express.static('public'));
 
