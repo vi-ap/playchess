@@ -18,3 +18,9 @@
 .board .square.white {
     background-color: white;
 }
+
+.board .line-break {
+    display: block;
+    height: 0;
+    width: 0;
+}
