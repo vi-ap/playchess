@@ -10,6 +10,9 @@ function drop(ev) {
     ev.preventDefault();
     ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("text")));
     
-    var snd = new Audio("/audio/horse.mp3"); // buffers automatically when created
-    snd.play();
+    if (document.getElementById("SoundOption").checked)
+    {
+        var snd = new Audio("/audio/horse.mp3"); // buffers automatically when created
+        snd.play();
+    }
 }
